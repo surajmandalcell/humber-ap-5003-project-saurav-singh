@@ -2,4 +2,22 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  height: 100%;
+  background: #121212;
+}
+
+.card.text-center{
+  height: 100%;
+  min-height: 90vh;
+  box-shadow: 0 10px 30px rgb(255 255 255 / 30%), 0 0 40px rgba(255, 207, 207, 0.1) inset
+}
+
+ul.list-group.list-group-flush{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group.m-2{
+  margin-top: auto !important;
 }

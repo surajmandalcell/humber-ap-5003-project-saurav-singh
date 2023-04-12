@@ -11,7 +11,7 @@ const Todo = ({ todo, handleDone, handleRemoveTodo }) => {
         onChange={() => handleDone(todo)}
         defaultChecked={todo.done}
       />
-      <label for={"done" + todo.id}>
+      <label htmlFor={"done" + todo.id}>
         {todo.done ? <s>{todo.task}</s> : todo.task}
       </label>
       <Button
