@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Blueprint, jsonify, request
 from .models import Todo, db
 from .utils import todo_serializer, generate_response
@@ -26,7 +27,7 @@ def add_todo():
         return generate_response(400, "Invalid payload.")
 
     task = post_data.get("task")
-    todo = Todo(task=task)
+    todo = Todo(task=task, created_on=datetime.utcnow(), updated_on=datetime.utcnow())
     db.session.add(todo)
     db.session.commit()
 
@@ -45,6 +46,7 @@ def update_todo(todo_id):
 
     todo.done = post_data.get("done")
     todo.task = post_data.get("task")
+    todo.updated_on = datetime.utcnow()
     db.session.commit()
 
     return generate_response(200, "Task updated.", todo_serializer(todo))
