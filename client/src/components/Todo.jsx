@@ -37,7 +37,7 @@ export default function Todo ({
         suppressContentEditableWarning={true}
         style={{ cursor: "text", width: "100%", textAlign: "left",  marginRight: '1.5rem', padding: '0.4rem 2rem', fontSize: '1.2rem' }}
       >
-        {todo.done ? <s>{label}</s> : label}
+        {todo.done ? <s>{todo.task}</s> : todo.task}
       </label>
       <Button
         className="btn btn-primary"
