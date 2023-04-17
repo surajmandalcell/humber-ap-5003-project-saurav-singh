@@ -44,6 +44,7 @@ def update_todo(todo_id):
         return generate_response(400, "Invalid payload.")
 
     todo.done = post_data.get("done")
+    todo.task = post_data.get("task")
     db.session.commit()
 
     return generate_response(200, "Task updated.", todo_serializer(todo))
